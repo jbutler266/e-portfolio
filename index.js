@@ -3,6 +3,21 @@
 // public key = l86GM9hvaMZ7D8Fu-
 
 let contrastToggle = false;
+const scaleFactor = 1 / 20;
+
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX * scaleFactor
+  const y = event.clientY * scaleFactor
+
+  for (let i = 0; i < shapes.length; i++) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px )`
+  }
+}
+
+window.addEventListener("mousemove", moveBackground);
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
@@ -12,6 +27,12 @@ function toggleContrast() {
   else {
     document.body.classList.remove('dark-theme')
   }
+
+  const logo = document.getElementById("personal-logo")
+  const isDark = document.body.classList.contains("dark-theme")
+
+  logo.src = isDark ? "./assets/assets/JBlogo_inverted.png" : "./assets/assets/JBlogo.PNG"
+
 }
 
 function contact(event) {

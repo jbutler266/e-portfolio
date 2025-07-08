@@ -31,7 +31,7 @@ function toggleContrast() {
   const logo = document.getElementById("personal-logo")
   const isDark = document.body.classList.contains("dark-theme")
 
-  logo.src = isDark ? "./assets/assets/JBlogo_inverted.png" : "./assets/assets/JBlogo.PNG"
+  logo.src = isDark ? "./assets/assets/JBlogo_inverted.PNG" : "./assets/assets/JBlogo.png"
 
 }
 

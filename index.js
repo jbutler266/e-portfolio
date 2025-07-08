@@ -4,35 +4,49 @@
 
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
+const scaleFactorMobile = 1 / 10;
 
-function moveBackground(event) {
+function moveBackground(x, y) {
   const shapes = document.querySelectorAll(".shape");
-  const x = event.clientX * scaleFactor
-  const y = event.clientY * scaleFactor
 
   for (let i = 0; i < shapes.length; i++) {
     const isOdd = i % 2 !== 0;
     const boolInt = isOdd ? -1 : 1;
-    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px )`
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${
+      y * boolInt
+    }px )`;
   }
 }
 
-window.addEventListener("mousemove", moveBackground);
+window.addEventListener("mousemove", (event => {
+  const x = event.clientX * scaleFactor;
+  const y = event.clientY * scaleFactor;
+  moveBackground(x, y)
+
+}));
+
+window.addEventListener("touchmove", (event) => {
+  if (event.touches.length === 0) return;
+  const touch = event.touches[0];
+  const x = touch.clientX * scaleFactorMobile;
+  const y = touch.clientY * scaleFactorMobile;
+  moveBackground(x, y);
+});
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
     document.body.classList += " dark-theme";
+  } else {
+    document.body.classList.remove("dark-theme");
   }
-  else {
-    document.body.classList.remove('dark-theme')
-  }
 
-  const logo = document.getElementById("personal-logo")
-  const isDark = document.body.classList.contains("dark-theme")
+  const logo = document.getElementById("personal-logo");
+  const isDark = document.body.classList.contains("dark-theme");
 
-  logo.src = isDark ? "./assets/assets/JBlogo_inverted.png" : "./assets/assets/JBlogo.png"
-
+  logo.src = isDark
+    ? "./assets/assets/JBlogo_inverted.png"
+    : "./assets/assets/JBlogo.png";
 }
 
 function contact(event) {

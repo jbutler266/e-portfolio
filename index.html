@@ -9,7 +9,6 @@
       src="https://kit.fontawesome.com/30dd1bf097.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
@@ -23,7 +22,7 @@
     </script>
   </head>
   <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
+    <section id="landing-page">
       <nav>
         <figure>
           <img id="personal-logo" src="./assets/assets/JBlogo.png" alt="" />
@@ -45,7 +44,7 @@
           </li>
           <li class="nav__link">
             <a
-            href="#"
+              href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
               onclick="toggleModal()"
               >Contact</a
@@ -79,17 +78,20 @@
               target="_blank"
               class="social--link purple click"
               ><i class="fa-brands fa-linkedin"></i></a
-            ><a href="assets/assets/joseph_resume_current.pdf" class="social--link purple click" target="_blank"
+            ><a
+              href="assets/assets/joseph_resume_current.pdf"
+              class="social--link purple click"
+              target="_blank"
               ><i class="fa-solid fa-file-pdf"></i
             ></a>
           </div>
         </div>
       </header>
       <a href="#">
-      <button class="mail__btn click" onclick="toggleModal()">
-        <i class="fa-solid fa-envelope"></i>
-      </button>
-    </a>
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
@@ -172,15 +174,15 @@
           </div>
         </div>
       </div>
-      <img src="assets/assets/semi circle.svg" class="shape shape--0">
-      <img src="assets/assets/circle.svg" class="shape shape--1">
-      <img src="assets/assets/squiggly.svg" class="shape shape--2">
-      <img src="assets/assets/circle.svg" class="shape shape--3">
-      <img src="assets/assets/triangle.svg" class="shape shape--4">
-      <img src="assets/assets/circle.svg" class="shape shape--5">
-      <img src="assets/assets/squiggly.svg" class="shape shape--6">
-      <img src="assets/assets/circle.svg" class="shape shape--7">
-      <img src="assets/assets/semi circle.svg" class="shape shape--8">
+      <img src="assets/assets/semi circle.svg" class="shape shape--0" />
+      <img src="assets/assets/circle.svg" class="shape shape--1" />
+      <img src="assets/assets/squiggly.svg" class="shape shape--2" />
+      <img src="assets/assets/circle.svg" class="shape shape--3" />
+      <img src="assets/assets/triangle.svg" class="shape shape--4" />
+      <img src="assets/assets/circle.svg" class="shape shape--5" />
+      <img src="assets/assets/squiggly.svg" class="shape shape--6" />
+      <img src="assets/assets/circle.svg" class="shape shape--7" />
+      <img src="assets/assets/semi circle.svg" class="shape shape--8" />
     </section>
     <section id="projects">
       <div class="container">
@@ -256,5 +258,6 @@
         </div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

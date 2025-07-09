@@ -4,8 +4,9 @@
 
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
-const scaleFactorMobile = 1 / 10;
+const scaleFactorMobile = 1 / 7;
 const shapes = document.querySelectorAll(".shape");
+
 
 function moveBackground(x, y) {
   for (let i = 0; i < shapes.length; i++) {
@@ -21,12 +22,13 @@ function handleMouseMove(event) {
   const x = event.clientX * scaleFactor;
   const y = event.clientY * scaleFactor;
   moveBackground(x, y);
-
+console.log('mouse move')
 }
 
 function handleScroll() {
   const y = window.scrollY * scaleFactorMobile;
   moveBackground(0, y);
+  
 }
 
 const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
@@ -34,9 +36,12 @@ const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
 if (isMobile) {
   window.addEventListener("scroll", handleScroll);
 } else {
-  window.addEventListener("mousemove", handleMouseMove)
+  window.addEventListener("mousemove", handleMouseMove);
 }
 
+console.log(handleMouseMove)
+console.log(handleScroll)
+console.log(moveBackground)
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
